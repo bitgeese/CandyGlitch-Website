@@ -1,17 +1,21 @@
 <script>
     import { onMount } from 'svelte';
-    import { gsap } from 'gsap';
-  
-    onMount(() => {
-      const elementsToShow = ['#corner-tl', '#corner-tr', '#corner-bl', '#corner-br', '#hero-title', '#hero-text', '#coming-soon', '#background-image'];
-  
-      elementsToShow.forEach(selector => {
+
+    onMount(async () => {
+    const { gsap } = await import('gsap');
+    const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+
+    gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.normalizeScroll(true);
+
+    const elementsToShow = ['#corner-tl', '#corner-tr', '#corner-bl', '#corner-br', '#hero-title', '#hero-text', '#coming-soon', '#background-image'];
+    
+    elementsToShow.forEach(selector => {
         const element = document.querySelector(selector);
         if (element) {
-          element.classList.remove('opacity-0');
+        element.classList.remove('opacity-0');
         }
-      });
-  
+    });
       gsap.from("#corner-tl", {
         duration: 1,
         opacity: 0,
