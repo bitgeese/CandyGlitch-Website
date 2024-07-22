@@ -127,14 +127,13 @@
 }
 
 .glitch-container {
-  font-size: var(--f);
+  /* font-size: var(--f); */
   display: flex;
   line-height: .75;
   margin: auto;
   color: #FFFFFF;
   text-align: center;
   transform: scaleX(var(--scale, 1));
-  animation: glitch-p 11s infinite alternate;
   position: relative;
 }
 
@@ -155,25 +154,18 @@
   filter: drop-shadow(0 0 transparent);
   background-color: var(--bg);
   clip-path: polygon(0% var(--t-cut), 100% var(--t-cut), 100% var(--b-cut), 0% var(--b-cut));
-}
-
-.glitch-container::before {
-  animation: glitch-b 1.7s infinite alternate-reverse;
-}
-
-.glitch-container::after {
-  animation: glitch-a 3.1s infinite alternate;
+  opacity: 0; /* Hide the glitch effect initially */
 }
 
 /* Glitch text for pink */
 .glitch-text-pink {
-  color: #ff75ba; /* Medium Pink */
+  color: #F75E86; /* Medium Pink */
 }
 
-.glitch-container::before .glitch-text-pink,
-.glitch-container::after .glitch-text-pink {
+.glitch-container:hover::before .glitch-text-pink,
+.glitch-container:hover::after .glitch-text-pink {
   text-shadow: calc(var(--left) * -3em) 0 .02em #FFC0CB, /* Light Pink */
-               calc(var(--left) * -6em) 0 .02em #ff2a9c; /* Dark Pink */
+               calc(var(--left) * -6em) 0 .02em #F75E86; /* Dark Pink */
 }
 
 /* Glitch text for white */
@@ -181,10 +173,17 @@
   color: #FFFFFF; /* White */
 }
 
-.glitch-container::before .glitch-text-white,
-.glitch-container::after .glitch-text-white {
-  text-shadow: calc(var(--left) * -3em) 0 .02em #ff2a9c, /* Dark Pink */
+.glitch-container:hover::before .glitch-text-white,
+.glitch-container:hover::after .glitch-text-white {
+  text-shadow: calc(var(--left) * -3em) 0 .02em #F75E86, /* Dark Pink */
                calc(var(--left) * -6em) 0 .02em #000000; /* Black */
+}
+
+.glitch-container:hover::before,
+.glitch-container:hover::after {
+  opacity: 1; /* Show the glitch effect on hover */
+  animation: glitch-b 1.7s infinite alternate-reverse;
+  animation: glitch-a 3.1s infinite alternate;
 }
 
 @keyframes glitch-p {
@@ -282,7 +281,7 @@
   
     <main class="h-full flex items-center justify-start relative z-10">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <h1 id="hero-title" class="text-4xl sm:text-8xl font-black uppercase opacity-0 glitch-container" data-text="CandyGlitch.">
+        <h1 id="hero-title" class="cursor-default text-4xl sm:text-8xl font-black uppercase opacity-0 glitch-container" data-text="CandyGlitch.">
             <span class="glitch-text-pink">Candy</span><span class="glitch-text-white">Glitch.</span>
           </h1>
           
