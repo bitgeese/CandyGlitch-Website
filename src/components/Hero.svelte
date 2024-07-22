@@ -131,7 +131,7 @@
     <div id="corner-br" class="hidden sm:block p-1.5 absolute bottom-0 right-0 z-10 opacity-0">
       <img src="/images/corner-dashed-br.svg" class="h-12 sm:h-24" alt="Bottom Right Corner" />
     </div>
-    <img id="background-image" src="/images/cottoncandy-01.png" class="absolute right-0 top-1/2 transform -translate-y-[60%] h-[45%] sm:h-[25%] max-h-full z-0 opacity-0" alt="Cotton Candy Image" />
+    <img id="background-image" src="/images/cottoncandy-01.png" class="absolute right-0 top-1/2 transform -translate-y-[60%] h-[45%] sm:h-[55%] max-h-full z-0 opacity-0" alt="Cotton Candy Image" />
   
     <main class="h-full flex items-center justify-start relative z-10">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
