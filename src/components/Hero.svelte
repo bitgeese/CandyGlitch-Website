@@ -117,6 +117,133 @@
       });
     });
   </script>
+
+  <style>
+
+:root {
+  --f-size: 15;
+  --f-unit: 1vmin;
+  --f: calc(var(--f-size) * var(--f-unit));
+  --bg: #181717; 
+}
+
+.glitch-text {
+  font-size: var(--f);
+  display: flex;
+  line-height: .75;
+  margin: auto;
+  color: #1af0dc;
+  text-align: center;
+  transform: scaleX(var(--scale, 1));
+  animation: glitch-p 11s infinite alternate;
+  position: relative;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  --top: 0;
+  --left: 0;
+  --v-height: 30%;
+  --n-tenth: calc(var(--f-size) * .1 * var(--top));
+  --t-cut: calc(var(--n-tenth) / var(--f-size) * 100%);
+  --b-cut: calc(var(--t-cut) + var(--v-height));
+  content: attr(data-text);
+  position: absolute;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  transform: translateX(calc(var(--left) * 100%));
+  filter: drop-shadow(0 0 transparent);
+  text-shadow: calc(var(--left) * -3em) 0 .02em lime, 
+               calc(var(--left) * -6em) 0 .02em #ff00e1;
+  background-color: var(--bg);
+  clip-path: polygon(0% var(--t-cut), 100% var(--t-cut), 100% var(--b-cut), 0% var(--b-cut));
+}
+
+.glitch-text::before {
+  animation: glitch-b 1.7s infinite alternate-reverse;
+}
+
+.glitch-text::after {
+  animation: glitch-a 3.1s infinite alternate;
+}
+
+@keyframes glitch-p {
+  17% { --scale: .87; }
+  31% { --scale: 1.1; }
+  37% { --scale: 1.3; }
+  47% { --scale: .91; }
+  87% { --scale: 1; }
+}
+
+@keyframes glitch-a {
+  10%, 30%, 50%, 70%, 90% {
+    --top: 0;
+    --left: 0;
+  }
+  0% {
+    --v-height: 15%;
+  }
+  20% {
+    --left: .005;
+  }
+  40% {
+    --left: .01;
+    --v-height: 20%;
+    --top: 3;
+  }
+  60% {
+    --left: .03;
+    --v-height: 25%;
+    --top: 6;
+  }
+  80% {
+    --left: .07;
+    --v-height: 5%;
+    --top: 8;
+  }
+  100% {
+    --left: .083;
+    --v-height: 30%;
+    --top: 1;
+  }
+}
+
+@keyframes glitch-b {
+  10%, 30%, 50%, 70%, 90% {
+    --top: 0;
+    --left: 0;
+  }
+  0% {
+    --v-height: 15%;
+    --top: 10;
+  }
+  20% {
+    --left: -.005;
+  }
+  40% {
+    --left: -.01;
+    --v-height: 17%;
+    --top: 3;
+  }
+  60% {
+    --left: -.03;
+    --v-height: 35%;
+    --top: 6;
+  }
+  80% {
+    --left: -.07;
+    --v-height: 5%;
+    --top: 8;
+  }
+  100% {
+    --left: -.083;
+    --v-height: 30%;
+    --top: 1;
+  }
+}
+
+  </style>
   
   <div class="min-h-screen h-screen relative">
     <div id="corner-tl" class="p-1.5 absolute top-0 left-0 z-10 opacity-0">
@@ -135,7 +262,7 @@
   
     <main class="h-full flex items-center justify-start relative z-10">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <h1 id="hero-title" class="text-4xl sm:text-8xl font-black uppercase opacity-0"><span class="text-[#F75E86]">Candy</span>Glitch.</h1>
+        <h1 id="hero-title" data-text="CandyGlitch" class="glitch-text text-4xl sm:text-8xl font-black uppercase opacity-0"><span class="text-[#F75E86]">Candy</span>Glitch.</h1>
         <div id="hero-text" class="mt-2 sm:mt-6 text-[#FEF5F8] font-degular lowercase font-light text-sm sm:text-lg tracking-widest max-w-xl opacity-0">
           <p>Web Design and Development Agency for <span class="font-semibold">Creatives</span>, Based in <span class="font-semibold">Warsaw,</span> Poland</p>
           <p class="mt-1 sm:mt-2">Let's Create Something Amazing Together!</p>
