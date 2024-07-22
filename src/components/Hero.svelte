@@ -54,10 +54,10 @@
   
   
   <div class="min-h-screen h-screen relative">
-    <CornerImage id="corner-tl" src="/images/corner-dashed-tl.svg" alt="Top Left Corner" positionClass="top-0 left-0" />
-    <CornerImage id="corner-tr" src="/images/corner-dashed-tr.svg" alt="Top Right Corner" positionClass="top-0 right-0" />
-    <CornerImage id="corner-bl" src="/images/corner-dashed-bl.svg" alt="Bottom Left Corner" positionClass="bottom-0 left-0 hidden sm:block" />
-    <CornerImage id="corner-br" src="/images/corner-dashed-br.svg" alt="Bottom Right Corner" positionClass="bottom-0 right-0 hidden sm:block" />
+    <CornerImage id="corner-tl" src="/images/corner-solid-tl.svg" alt="Top Left Corner" positionClass="top-0 left-0" />
+    <CornerImage id="corner-tr" src="/images/corner-solid-tr.svg" alt="Top Right Corner" positionClass="top-0 right-0" />
+    <CornerImage id="corner-bl" src="/images/corner-solid-bl.svg" alt="Bottom Left Corner" positionClass="bottom-0 left-0 hidden sm:block" />
+    <CornerImage id="corner-br" src="/images/corner-solid-br.svg" alt="Bottom Right Corner" positionClass="bottom-0 right-0 hidden sm:block" />
     
     <img id="background-image" src="/images/cottoncandy-01.png" class="absolute right-0 top-1/2 transform -translate-y-[60%] h-[45%] sm:h-[55%] max-h-full z-0 opacity-0" alt="Cotton Candy Image" />
   
