@@ -71,7 +71,7 @@
     });
   </script>
   
-  <div class="h-screen relative">
+  <div class="min-h-screen h-screen relative">
     <div id="corner-tl" class="p-1.5 absolute top-0 left-0 z-10 opacity-0">
       <img src="/images/corner-dashed-tl.svg" class="h-12 sm:h-24" alt="Top Left Corner" />
     </div>
