@@ -1,10 +1,10 @@
 <script>
     import { onMount } from 'svelte';
     import { gsap } from 'gsap';
-    
+  
     onMount(() => {
       const elementsToShow = ['#corner-tl', '#corner-tr', '#corner-bl', '#corner-br', '#hero-title', '#hero-text', '#coming-soon', '#background-image'];
-      
+  
       elementsToShow.forEach(selector => {
         const element = document.querySelector(selector);
         if (element) {
@@ -16,49 +16,56 @@
         duration: 1,
         opacity: 0,
         y: -50,
-        delay: 0.2
+        delay: 0.2,
+        stagger: 0.1
       });
   
       gsap.from("#corner-tr", {
         duration: 1,
         opacity: 0,
         y: -50,
-        delay: 0.4
+        delay: 0.4,
+        stagger: 0.1
       });
   
       gsap.from("#corner-bl", {
         duration: 1,
         opacity: 0,
         y: 50,
-        delay: 0.6
+        delay: 0.6,
+        stagger: 0.1
       });
   
       gsap.from("#corner-br", {
         duration: 1,
         opacity: 0,
         y: 50,
-        delay: 0.8
+        delay: 0.8,
+        stagger: 0.1
       });
   
       gsap.from("#hero-title", {
         duration: 1,
         opacity: 0,
         y: 50,
-        delay: 1
+        delay: 1,
+        stagger: 0.1
       });
   
       gsap.from("#hero-text", {
         duration: 1,
         opacity: 0,
         y: 50,
-        delay: 1.5
+        delay: 1.5,
+        stagger: 0.1
       });
   
       gsap.from("#coming-soon", {
         duration: 1,
         opacity: 0,
         y: 50,
-        delay: 2
+        delay: 2,
+        stagger: 0.1
       });
   
       gsap.from("#background-image", {
@@ -66,18 +73,11 @@
         opacity: 0,
         x: 100,
         delay: 0.5,
-        ease: "power4.out"
+        ease: "power4.out",
+        stagger: 0.1
       });
     });
-
-    gsap.ticker.lagSmoothing(1000, 16);
   </script>
-
-  <style>
-    #corner-tl, #corner-tr, #corner-bl, #corner-br, #hero-title, #hero-text, #coming-soon, #background-image {
-  will-change: transform, opacity;
-}
-  </style>
   
   <div class="min-h-screen h-screen relative">
     <div id="corner-tl" class="p-1.5 absolute top-0 left-0 z-10 opacity-0">
@@ -93,8 +93,6 @@
       <img src="/images/corner-dashed-br.svg" class="h-12 sm:h-24" alt="Bottom Right Corner" />
     </div>
     <img id="background-image" src="/images/cottoncandy-01.png" class="absolute right-0 top-1/2 transform -translate-y-[60%] h-[65%] sm:h-[75%] max-h-full z-0 opacity-0" alt="Cotton Candy Image" />
-    <img id="background-image" src="/images/cottoncandy-01.png" class="absolute right-0 top-1/2 transform -translate-y-[60%] h-[75%] max-h-full z-0 opacity-0" alt="Cotton Candy Image" />
-
   
     <main class="h-full flex items-center justify-start relative z-10">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -106,4 +104,3 @@
       </div>
     </main>
   </div>
-  
