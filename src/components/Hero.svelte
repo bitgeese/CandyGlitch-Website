@@ -1,84 +1,119 @@
 <script>
     import { onMount } from 'svelte';
-
+  
     onMount(async () => {
-    const { gsap } = await import('gsap');
-    const { ScrollTrigger } = await import('gsap/ScrollTrigger');
-
-    gsap.registerPlugin(ScrollTrigger);
-    ScrollTrigger.normalizeScroll(true);
-
-    const elementsToShow = ['#corner-tl', '#corner-tr', '#corner-bl', '#corner-br', '#hero-title', '#hero-text', '#coming-soon', '#background-image'];
-    
-    elementsToShow.forEach(selector => {
-        const element = document.querySelector(selector);
-        if (element) {
-        element.classList.remove('opacity-0');
-        }
-    });
-      gsap.from("#corner-tl", {
-        duration: 1,
-        opacity: 0,
-        y: -50,
-        delay: 0.2,
-        stagger: 0.1
+      const { gsap } = await import('gsap');
+      const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+  
+      gsap.registerPlugin(ScrollTrigger);
+  
+      let mm = gsap.matchMedia();
+  
+      // Define breakpoints
+      mm.add("(min-width: 640px)", () => {
+        // Animations for screens wider than 640px (non-mobile)
+        const elementsToShow = ['#corner-tl', '#corner-tr', '#corner-bl', '#corner-br', '#hero-title', '#hero-text', '#coming-soon', '#background-image'];
+        
+        elementsToShow.forEach(selector => {
+          const element = document.querySelector(selector);
+          if (element) {
+            element.classList.remove('opacity-0');
+          }
+        });
+  
+        gsap.from("#corner-tl", {
+          duration: 1,
+          opacity: 0,
+          y: -50,
+          delay: 0.2,
+          stagger: 0.1
+        });
+  
+        gsap.from("#corner-tr", {
+          duration: 1,
+          opacity: 0,
+          y: -50,
+          delay: 0.4,
+          stagger: 0.1
+        });
+  
+        gsap.from("#corner-bl", {
+          duration: 1,
+          opacity: 0,
+          y: 50,
+          delay: 0.6,
+          stagger: 0.1
+        });
+  
+        gsap.from("#corner-br", {
+          duration: 1,
+          opacity: 0,
+          y: 50,
+          delay: 0.8,
+          stagger: 0.1
+        });
+  
+        gsap.from("#hero-title", {
+          duration: 1,
+          opacity: 0,
+          y: 50,
+          delay: 1,
+          stagger: 0.1
+        });
+  
+        gsap.from("#hero-text", {
+          duration: 1,
+          opacity: 0,
+          y: 50,
+          delay: 1.5,
+          stagger: 0.1
+        });
+  
+        gsap.from("#coming-soon", {
+          duration: 1,
+          opacity: 0,
+          y: 50,
+          delay: 2,
+          stagger: 0.1
+        });
+  
+        gsap.from("#background-image", {
+          duration: 1.5,
+          opacity: 0,
+          x: 100,
+          delay: 0.5,
+          ease: "power4.out",
+          stagger: 0.1
+        });
+  
+        // Cleanup function when the media query no longer matches
+        return () => {
+          gsap.killTweensOf("#corner-tl, #corner-tr, #corner-bl, #corner-br, #hero-title, #hero-text, #coming-soon, #background-image");
+        };
       });
   
-      gsap.from("#corner-tr", {
-        duration: 1,
-        opacity: 0,
-        y: -50,
-        delay: 0.4,
-        stagger: 0.1
-      });
+      mm.add("(max-width: 639px)", () => {
+        // Animations for screens narrower than 640px (mobile)
+        const elementsToShow = ['#corner-tl', '#corner-tr', '#corner-bl', '#corner-br', '#hero-title', '#hero-text', '#coming-soon', '#background-image'];
+        
+        elementsToShow.forEach(selector => {
+          const element = document.querySelector(selector);
+          if (element) {
+            element.classList.remove('opacity-0');
+          }
+        });
   
-      gsap.from("#corner-bl", {
-        duration: 1,
-        opacity: 0,
-        y: 50,
-        delay: 0.6,
-        stagger: 0.1
-      });
+        gsap.from(elementsToShow, {
+          duration: 1,
+          opacity: 0,
+          delay: 0.2,
+          stagger: 0.1
+        });
   
-      gsap.from("#corner-br", {
-        duration: 1,
-        opacity: 0,
-        y: 50,
-        delay: 0.8,
-        stagger: 0.1
-      });
-  
-      gsap.from("#hero-title", {
-        duration: 1,
-        opacity: 0,
-        y: 50,
-        delay: 1,
-        stagger: 0.1
-      });
-  
-      gsap.from("#hero-text", {
-        duration: 1,
-        opacity: 0,
-        y: 50,
-        delay: 1.5,
-        stagger: 0.1
-      });
-  
-      gsap.from("#coming-soon", {
-        duration: 1,
-        opacity: 0,
-        y: 50,
-        delay: 2,
-        stagger: 0.1
-      });
-  
-      gsap.from("#background-image", {
-        duration: 1.5,
-        opacity: 0,
-        x: 100,
-        delay: 0.5,
-        ease: "power4.out",
-        stagger: 0.1
+        // Cleanup function when the media query no longer matches
+        return () => {
+          gsap.killTweensOf(elementsToShow);
+        };
       });
     });
   </script>
