@@ -125,13 +125,13 @@
     <div id="corner-tr" class="p-1.5 absolute top-0 right-0 z-10 opacity-0">
       <img src="/images/corner-dashed-tr.svg" class="h-12 sm:h-24" alt="Top Right Corner" />
     </div>
-    <div id="corner-bl" class="p-1.5 absolute bottom-10 sm:bottom-0 left-0 z-10 opacity-0">
+    <div id="corner-bl" class="hidden sm:block p-1.5 absolute bottom-10 sm:bottom-0 left-0 z-10 opacity-0">
         <img src="/images/corner-dashed-bl.svg" class="h-12 sm:h-24" alt="Bottom Left Corner" />
     </div>
-    <div id="corner-br" class="p-1.5 absolute bottom-10 sm:bottom-0 right-0 z-10 opacity-0">
+    <div id="corner-br" class="hidden sm:block p-1.5 absolute bottom-10 sm:bottom-0 right-0 z-10 opacity-0">
         <img src="/images/corner-dashed-br.svg" class="h-12 sm:h-24" alt="Bottom Right Corner" />
     </div>
-    
+
     <img id="background-image" src="/images/cottoncandy-01.png" class="absolute right-0 top-1/2 transform -translate-y-[60%] h-[65%] sm:h-[75%] max-h-full z-0 opacity-0" alt="Cotton Candy Image" />
   
     <main class="h-full flex items-center justify-start relative z-10">
