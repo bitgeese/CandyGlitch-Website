@@ -3,9 +3,11 @@ module.exports = {
     theme: {
       extend: {
         fontFamily: {
-          sans: ['Obviously', 'sans-serif'],
+          display: ['Obviously', 'sans-serif'],
           handwritten: ['Skribblugh', 'cursive'],
           degular: ['Degular Text', 'sans-serif'],
+          mono: ["Degular Mono", "sans-mono"]
+
         },
         fontWeight: {
             thin: 100,
