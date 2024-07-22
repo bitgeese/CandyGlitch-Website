@@ -69,7 +69,15 @@
         ease: "power4.out"
       });
     });
+
+    gsap.ticker.lagSmoothing(1000, 16);
   </script>
+
+  <style>
+    #corner-tl, #corner-tr, #corner-bl, #corner-br, #hero-title, #hero-text, #coming-soon, #background-image {
+  will-change: transform, opacity;
+}
+  </style>
   
   <div class="min-h-screen h-screen relative">
     <div id="corner-tl" class="p-1.5 absolute top-0 left-0 z-10 opacity-0">
