@@ -1,4 +1,5 @@
-<style>
+
+  <style>
     :root {
       --f-size: 15;
       --f-unit: 1vmin;
@@ -7,7 +8,6 @@
     }
     
     .glitch-container {
-      /* font-size: var(--f); */
       display: flex;
       line-height: .75;
       margin: auto;
@@ -37,7 +37,6 @@
       opacity: 0; /* Hide the glitch effect initially */
     }
     
-    /* Glitch text for pink */
     .glitch-text-pink {
       color: #F75E86; /* Medium Pink */
     }
@@ -48,7 +47,6 @@
                    calc(var(--left) * -6em) 0 .02em #F75E86; /* Dark Pink */
     }
     
-    /* Glitch text for white */
     .glitch-text-white {
       color: #FFFFFF; /* White */
     }
@@ -140,22 +138,24 @@
         --top: 1;
       }
     }
-    
-    
-      </style>
+  </style>
   
-<h1 id="hero-title" class="cursor-default text-4xl sm:text-8xl font-display font-black uppercase opacity-0 glitch-container" data-text="CandyGlitch.">
+  <h1 
+    id="hero-title" 
+    class="cursor-default text-4xl sm:text-8xl font-display font-black uppercase opacity-0 glitch-container" 
+    data-text="CandyGlitch."
+  >
     <span class="glitch-text-pink">Candy</span><span class="glitch-text-white">Glitch.</span>
-</h1>
-<div id="hero-text" class="mt-2 sm:mt-6 text-[#FEF5F8] font-mono lowercase font-thin text-sm sm:text-lg tracking-widest max-w-xl opacity-0">
-  <!-- <p>Web Design and Development Agency for <span class="font-semibold">Creatives</span>, Based in <span class="font-semibold">Warsaw,</span> Poland</p> -->
-   <p>web design & dev for the creatively <span class="font-bold">unhinged</span></p>
-   <p>warsaw-based. globally connected</p>
-  <p class="mt-1 sm:mt-2">
-    we craft digital <span class="font-bold">stages</span> for your art to shine
-  </p>
-  <p class="mt-1 sm:mt-2">wanna make some noise online?</p>
-  <p>
-    <!-- Contact Us at:  -->
-    hit us up: <a class="font-semibold hover:underline hover:text-[#EA6C8A]" href="mailto:maciekjanowski42@icloud.com">MaciekJanowski42@icloud.com</a></p>
-</div>
+  </h1>
+  
+  <div id="hero-text" class="mt-2 sm:mt-6 text-[#FEF5F8] font-mono lowercase font-thin text-sm sm:text-lg tracking-widest max-w-xl opacity-0">
+    <p>web design & dev for the creatively <span class="font-bold">unhinged</span></p>
+    <p>warsaw-based. globally connected</p>
+    <p class="mt-1 sm:mt-2">
+      we craft digital <span class="font-bold">stages</span> for your art to shine
+    </p>
+    <p class="mt-1 sm:mt-2">wanna make some noise online?</p>
+    <p>
+      hit us up: <a class="font-semibold hover:underline hover:text-[#EA6C8A]" href="mailto:maciekjanowski42@icloud.com">MaciekJanowski42@icloud.com</a>
+    </p>
+  </div>
